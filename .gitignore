@@ -22,9 +22,6 @@ build/
 .mypy_cache/
 .ruff_cache/
 
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb_checkpoints
 
 # R
 .Rhistory
