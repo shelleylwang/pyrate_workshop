@@ -22,6 +22,6 @@ module load anaconda3/2024.2
 python ../PyRate/PyRate.py input_data/pbdb_data_PyRate.py \
 -qShift Time_bins_ByStages.txt -mG \
 -BDNNmodel 1 \
--BDNNtimevar predictor_data/environmental_data_standardized.csv \
--BDNNtimetrait 0 -BDNN_nsim_expected_cv 0 -translate 199 -BDNNnodes 4 2 -BDNNupdate_f 0.3 \
+-BDNNtimevar predictor_data/environmental_data_standardized.txt \
+-BDNNtimetrait 0 -BDNN_nsim_expected_cv 0 -translate -199 -BDNNnodes 4 2 -BDNNupdate_f 0.3 \
 -n 100000 -s 100 -wd bdnn -j ${SLURM_ARRAY_TASK_ID} 
