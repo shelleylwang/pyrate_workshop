@@ -7,7 +7,7 @@
 #SBATCH --mail-type=end                 # Send email when job ends
 #SBATCH --mail-user=sw8569@princeton.edu
 #SBATCH --output=/scratch/gpfs/SIMOES/sw8569/pyrate_workshop/rjmcmc_%j_%A_%a.out
-#SBATCH --error=/scratch/gpfs/SIMOES/sw8569/pyrate_workshop/_%j_%A_%a.err
+#SBATCH --error=/scratch/gpfs/SIMOES/sw8569/pyrate_workshop/rmcmc_%j_%A_%a.err
 #SBATCH --no-requeue                    # Disable requeue
 
 # Change to the directory where the script should run
@@ -22,4 +22,4 @@ module load anaconda3/2024.2
 python ../PyRate/PyRate.py input_data/pbdb_data_PyRate.py \
 -qShift Time_bins_ByStages.txt -mG \
 -A 4 \
--n 10000 -s 10 -wd rjmcmc -j ${SLURM_ARRAY_TASK_ID} 
+-n 100000 -s 100 -wd rjmcmc -j ${SLURM_ARRAY_TASK_ID} 
